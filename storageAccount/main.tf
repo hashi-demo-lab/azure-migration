@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.42.0"
     }
   }
@@ -18,11 +18,11 @@ resource "azurerm_resource_group" "tfstate" {
 }
 
 resource "azurerm_storage_account" "tfstate" {
-  name                     = "tfstatesl"
-  resource_group_name      = azurerm_resource_group.tfstate.name
-  location                 = azurerm_resource_group.tfstate.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  name                          = "tfstatesl"
+  resource_group_name           = azurerm_resource_group.tfstate.name
+  location                      = azurerm_resource_group.tfstate.location
+  account_tier                  = "Standard"
+  account_replication_type      = "LRS"
   public_network_access_enabled = false
 
   tags = {
